@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEV EXPERIENCE 2.0 — Transforme ideias em experiências digitais</title>
+<meta name="description" content="Plataforma educativa interativa sobre a profissão de desenvolvedor web.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="menu">
+  <a class="skip" href="#conteudo" onclick="event.preventDefault();document.getElementById('conteudo').focus()">Pular para o conteúdo</a>
+  <div class="wrap">
+    <div class="bar">
+      <a class="logo" href="#inicio"><b>&lt;/&gt;</b><span>DEV EXPERIENCE <span class="grad">2.0</span></span></a>
+      <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+    <nav aria-label="Principal"><ul id="nav"></ul></nav>
+  </div>
+</header>
+
+<main id="conteudo" tabindex="-1">
+
+<!-- INÍCIO -->
+<section class="view" id="v-inicio" style="padding:0">
+  <div class="hero-s"><div class="grid-bg" aria-hidden="true"></div>
+    <div class="wrap two">
+      <div>
+        <p class="badge mono">✦ <span data-h="badge"></span></p>
+        <p class="mono mut" style="margin-top:1.5rem;letter-spacing:.1em;font-size:.875rem">DEV EXPERIENCE 2.0</p>
+        <h1><span class="grad" data-h="headline"></span></h1>
+        <p style="margin-top:.75rem;font-size:1.125rem;font-weight:500">Transforme ideias em experiências digitais.</p>
+        <p class="mut" style="margin-top:1rem;max-width:36rem" data-h="intro"></p>
+        <div class="row" style="margin-top:2rem">
+          <a class="btn hero lg" href="#editor">Começar experiência →</a>
+          <button class="btn out lg" onclick="document.getElementById('modulos').scrollIntoView()">Explorar o projeto</button>
+        </div>
+      </div>
+      <div class="surface glow code" aria-hidden="true">
+        <div class="dots"><i></i><i></i><i></i><span class="mono mut" style="margin-left:.75rem;font-size:.75rem">futuro.js</span></div>
+<pre><span class="v">const</span> <span class="cy">ideia</span> = <span class="s">"seu projeto"</span>;
+<span class="v">function</span> <span class="f">criar</span>(ideia) {
+  <span class="v">return</span> planejar(ideia)
+    .<span class="f">codar</span>()
+    .<span class="f">testar</span>()
+    .<span class="f">publicar</span>();
+}
+<span class="mut">// 🚀 Pronto para o mundo</span>
+criar(<span class="cy">ideia</span>);<span class="blink">▌</span></pre>
+      </div>
+    </div>
+  </div>
+  <div class="wrap" id="modulos" style="scroll-margin-top:5rem">
+    <h2 style="font-size:1.5rem">Escolha uma experiência</h2>
+    <ul class="cards" id="cards"></ul>
+    <blockquote class="surface">“<span data-h="quote"></span>”</blockquote>
+  </div>
+</section>
+
+<!-- EDITOR VISUAL -->
+<section class="view" id="v-editor"><div class="wrap">
+  <p class="eyebrow mono">Módulo 01</p><h1>Editor Visual de Sites</h1>
+  <p class="lead">Escolha um modelo e personalize. A prévia muda na hora — é assim que um desenvolvedor vê o resultado enquanto trabalha.</p>
+  <div class="ed">
+    <form class="surface ctl" onsubmit="return false" aria-label="Controles do site">
+      <fieldset><legend>Modelo</legend><div class="g3" id="tpls"></div></fieldset>
+      <div><label for="e-company">Nome da empresa</label><input type="text" id="e-company" maxlength="80"></div>
+      <div><label for="e-title">Título</label><input type="text" id="e-title" maxlength="80"></div>
+      <div><label for="e-desc">Descrição</label><textarea id="e-desc" maxlength="240"></textarea></div>
+      <div><label for="e-button">Texto do botão</label><input type="text" id="e-button" maxlength="80"></div>
+      <div class="g3">
+        <div><label for="e-bg">Fundo</label><input type="color" id="e-bg"></div>
+        <div><label for="e-text">Texto</label><input type="color" id="e-text"></div>
+        <div><label for="e-btn">Botões</label><input type="color" id="e-btn"></div>
+      </div>
+      <fieldset><legend>Imagem</legend><div class="g4" id="imgs"></div></fieldset>
+      <button type="button" class="btn out" id="e-reset">↺ Restaurar padrão</button>
+    </form>
+    <section id="pvsec" aria-label="Prévia" style="display:flex;flex-direction:column">
+      <div class="tools">
+        <div class="seg" role="group" aria-label="Tamanho da prévia">
+          <button class="btn sm sec" id="d-desk" aria-pressed="true">🖥 Desktop</button>
+          <button class="btn sm gh" id="d-mob" aria-pressed="false">📱 Celular</button>
+        </div>
+        <button class="btn sm out" id="e-full">⛶ Tela cheia</button>
+      </div>
+      <div class="stage"><div id="pvbox"></div></div>
+    </section>
+  </div>
+</div></section>
+
+<!-- DEV LAB -->
+<section class="view" id="v-dev-lab"><div class="wrap">
+  <p class="eyebrow mono">Módulo 02</p><h1>DEV LAB · Código Livre</h1>
+  <p class="lead">Escreva código de verdade. Ele roda numa caixa isolada, sem acesso ao restante do site, aos seus dados ou à internet.</p>
+  <div class="lab">
+    <div class="surface" style="padding:.75rem">
+      <div class="row" style="margin-bottom:.75rem;align-items:center">
+        <div role="tablist" class="row" style="gap:.25rem" id="tabs"></div>
+        <div class="row" style="margin-left:auto;gap:.5rem">
+          <button class="btn hero sm" id="l-run">▶ Executar</button>
+          <button class="btn out sm" id="l-ex">↺ Exemplo</button>
+          <button class="btn out sm" id="l-clr">⌫ Limpar</button>
+        </div>
+      </div>
+      <textarea id="l-code" spellcheck="false" aria-label="Editor de código"></textarea>
+      <p class="status" id="l-st" aria-live="polite"></p>
+    </div>
+    <div>
+      <iframe id="l-frame" title="Prévia do código" sandbox="allow-scripts allow-modals"></iframe>
+      <div class="surface errs" role="log" aria-label="Erros"><strong>Erros:</strong> <span id="l-err" class="mut">nenhum</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- GAME -->
+<section class="view" id="v-game"><div class="wrap" style="max-width:48rem">
+  <p class="eyebrow mono">Módulo 03</p><h1>Game de Programação</h1>
+  <p class="lead" id="g-lead"></p>
+  <div id="gbox"></div>
+</div></section>
+
+<!-- APRENDA -->
+<section class="view" id="v-aprenda"><div class="wrap">
+  <p class="eyebrow mono">Módulo 04</p><h1>Aprenda</h1>
+  <p class="lead">Lições curtas, em português simples.</p>
+  <div class="learn"><nav aria-label="Lições"><ol id="l-nav"></ol></nav><article class="surface" style="padding:2rem" id="l-art" aria-live="polite"></article></div>
+</div></section>
+
+<!-- BASTIDORES -->
+<section class="view" id="v-bastidores"><div class="wrap">
+  <p class="eyebrow mono">Módulo 05</p><h1>Bastidores de um site</h1>
+  <p class="lead">Clique em cada parte para descobrir o que ela faz — ou simule um pedido.</p>
+  <div class="surface" style="padding:1.25rem">
+    <div class="flow" id="b-nodes"></div>
+    <div class="det" id="b-det" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<!-- APRESENTADOR -->
+<section class="view" id="v-apresentador"><div class="wrap">
+  <p class="eyebrow mono">Painel</p><h1>Modo Apresentador</h1>
+  <p class="lead">Tudo é salvo automaticamente neste navegador (não sincroniza entre dispositivos).</p>
+  <div class="pres">
+    <div><button class="btn dst" id="p-reset">Restaurar conteúdo original</button></div>
+    <section class="surface"><h2 style="font-size:1.25rem">Página inicial</h2><div id="p-home" style="display:grid;gap:1rem"></div></section>
+  </div>
+</div></section>
+
+</main>
+<footer>
+  <p>DEV EXPERIENCE 2.0 · Transforme ideias em experiências digitais.</p>
+  <small>Suas criações ficam salvas apenas neste navegador (armazenamento local) e não sincronizam entre dispositivos.</small>
+</footer>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
